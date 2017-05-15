@@ -42,6 +42,12 @@ func (app *App) error(w http.ResponseWriter, err error) {
 func (app *App) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	r.ParseForm()
 
+	token := r.Form.Get("token")
+	if token != app.config.Slack.Token {
+		app.error(w, ErrInvalidOutgointWebHooksToken)
+		return
+	}
+
 	event, err := app.convertToEvent(r)
 	if err != nil {
 		if err == ErrUnknownMessage {

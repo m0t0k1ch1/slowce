@@ -13,7 +13,8 @@ const (
 )
 
 var (
-	ErrUnknownMessage = errors.New("unknown message")
+	ErrInvalidOutgointWebHooksToken = errors.New("invalid Outgoing WebHooks token")
+	ErrUnknownMessage               = errors.New("unknown message")
 )
 
 func main() {

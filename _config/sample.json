@@ -3,5 +3,10 @@
     "rules": {
         "slack-message": "consul-event-name"
     },
-    "consul": "/usr/local/bin/consul"
+    "slack": {
+        "token": "your Outgoing Webhooks token"
+    },
+    "consul": {
+        "bin_path": "/usr/local/bin/consul"
+    }
 }

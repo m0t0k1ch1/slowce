@@ -32,5 +32,5 @@ func (app *App) convertToEvent(r *http.Request) (*Event, error) {
 }
 
 func (app *App) fireEvent(event *Event) error {
-	return exec.Command(app.config.Consul, "event", "-name", event.name).Run()
+	return exec.Command(app.config.Consul.BinPath, "event", "-name", event.name).Run()
 }
