@@ -1,0 +1,7 @@
+{
+    "port": 8080,
+    "rules": {
+        "slack-message": "consul-event-name"
+    },
+    "consul": "/usr/local/bin/consul"
+}
